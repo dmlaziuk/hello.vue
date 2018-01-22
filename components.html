@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Vue.js Components Samples
+        </title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <h3>Global registration</h3>
+        <div id="example">
+            <my-component></my-component>
+        </div>
+
+        <h3>:data have to be function</h3>
+        <div id="example-2">
+            <simple-counter></simple-counter>
+            <simple-counter></simple-counter>
+            <simple-counter></simple-counter>
+        </div>
+    </body>
+    <script>
+        Vue.component('my-component', {
+            template: '<div>Пользовательский компонент!</div>'
+        });
+        new Vue({
+            el: '#example'
+        });
+
+        Vue.component('simple-counter', {
+            template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+            data: function () {
+                return { counter: 0 }
+            }
+        });
+        new Vue({
+            el: '#example-2'
+        });
+    </script>
+</html>
