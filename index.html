@@ -52,6 +52,12 @@
             <p>Изначальное сообщение: "{{ message }}"</p>
             <p>Сообщение задом наперёд: "{{ reversedMessage }}"</p>
         </div>
+        <div id="app-10">
+            <label><input type="radio" v-model="value" value="one"> One</label>
+            <label><input type="radio" v-model="value" value="two"> Two</label>
+            <label><input type="radio" v-model="value" value="three"> Three</label>
+            <p>The value is {{ value }}</p>
+        </div>
     </body>
     <script>
         var app = new Vue({
@@ -130,6 +136,12 @@
                 }
             }
 
+        });
+        var app10 = new Vue({
+            el: '#app-10',
+            data: {
+                value: 'one'
+            }
         });
     </script>
 </html>
